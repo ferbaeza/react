@@ -27,10 +27,11 @@ export default function Dashboard(){
 
     
     return (
-        <div>
-            <h3>Listar un objeto</h3>
-            <Notes notas={notas} setNotas={setNotas}></Notes>
+        <div className='container'>
+            <h3 className='title mt-5 has-text-centered'>App Notas</h3>
             <Form notas={notas} setNotas={setNotas}></Form>
+
+            <Notes notas={notas} setNotas={setNotas}></Notes>
 
 
 

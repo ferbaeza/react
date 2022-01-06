@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
- import Dashboard from './home'
+import Dashboard from './home';
+import './index.css';
 
 
 ReactDOM.render(

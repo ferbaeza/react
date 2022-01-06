@@ -46,17 +46,25 @@ export default function Form({notas, setNotas}) {
 
 
     return (
-            <form onSubmit={(ev)=>addNote(ev)}>
-                <label htmlFor=''>Titulo
-                    <input id='title' value={note.title} type="text" onChange={ (ev)=>setNote({...note, title: ev.target.value})} />
-                </label><br/>
-                <label htmlFor=''>Accion
-                    <input id='body'  value={note.body} type="text" onChange={ (ev)=>setNote({...note, body: ev.target.value})}/>
-                </label>
-                <button >Save</button>
+        <div className='conatiner has-background-info-light pr-6 pl-6 pb-1 mr-6 mb-3'>
+            <form className='has-text-centered mb-4 mt-3 w-2 ' onSubmit={(ev)=>addNote(ev)}>
+                <div className="field">
+                    <label className='ml-4' htmlFor=''>Titulo</label>
+                    <div className="control">
+                        <input className='input' id='title' value={note.title} type="text" onChange={ (ev)=>setNote({...note, title: ev.target.value})} />
+                    </div>
+                </div>
+                <div className="field">
+                    <label className='ml-4' htmlFor=''>Accion</label>
+                    <div className="control">
+                        <textarea className='textarea' id='body'  value={note.body} type="text" onChange={ (ev)=>setNote({...note, body: ev.target.value})}/>
+                    </div>
+                </div>
+                <button className='button is-dark'>Save</button>
 
 
             </form>
+        </div>
 
     )
 }
