@@ -1,6 +1,7 @@
-import {useState, React} from 'react'
+import {useState, useEffect, React} from 'react'
 import Form from './components/Form';
 import Notes from './components/Notes'
+import axios from 'axios'
 
 
 // index.js
@@ -15,13 +16,18 @@ import Notes from './components/Notes'
 
 
 export default function Dashboard(){
+    useEffect(() => {
+        axios.get('http://festivales.test/notes/notes')
+        .then((payload)=>{
+            console.log(payload);
+            setNotas(payload.data)
+        }).catch((error)=>{
+            console.log(error)
+        })
+    }, [])
 
     const [notas, setNotas]= useState([
         {id:1, title:'nota 1', body:'Hola'},
-        {id:2, title:'nota 2', body:'Hi'},
-        {id:3, title:'nota 3', body:'Bonjour'},
-        {id:4, title:'nota 4', body:'Haa'},
-        {id:5, title:'nota 5', body:'Ey'},
 
     ]);
 

@@ -17,19 +17,19 @@ export default function Note({n, deleteNote, updateNote}) {
     }
     return (
         <div className='column is-one-quarter'>
-            <div class="card">
-                <header class="card-header">
+            <div className="card">
+                <header className="card-header">
                     <p class="card-header-title">
                     Id: {n.id}
                     </p>
-                    <button class="card-header-icon" aria-label="more options">
-                    <span class="icon">
+                    <button className="card-header-icon" aria-label="more options">
+                    <span className="icon">
                         <i class="fas fa-angle-down" aria-hidden="true"></i>
                     </span>
                     </button>
                 </header>
-                <div class="card-content">
-                    <div class="content">
+                <div className="card-content">
+                    <div className="content">
                         {
                             modeEdit ?
                             <div className="field">
@@ -50,13 +50,13 @@ export default function Note({n, deleteNote, updateNote}) {
                             </div>
                             :<div>Body: {n.body}  </div>
                         }
-                        <footer class="card-footer">
-                            <a href={'/'}  class="card-footer-item" onClick={(e)=>toogle(e)}>{modeEdit ? 'Cerrar' : "Editar"}</a>
+                        <footer className="card-footer">
+                            <a href={'/'}  className="card-footer-item" onClick={(e)=>toogle(e)}>{modeEdit ? 'Cerrar' : "Editar"}</a>
                             {
                                 modeEdit ?
-                                <a  href={'/'} class="card-footer-item"  onClick={(e)=> edit(e)}>Save</a>
+                                <a  href={'/'} className="card-footer-item"  onClick={(e)=> edit(e)}>Save</a>
                                 :
-                                <a href={'/'} class="card-footer-item"  onClick={(e)=>deleteNote(n.id, e)}>Delete</a>
+                                <a href={'/'} className="card-footer-item"  onClick={(e)=>deleteNote(n.id, e)}>Delete</a>
                             }
                         </footer>
 
