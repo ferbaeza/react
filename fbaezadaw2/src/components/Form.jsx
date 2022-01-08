@@ -16,6 +16,20 @@ export default function Form({notas, setNotas}) {
     const addNote=(ev)=>{  
         ev.preventDefault();
         console.log("submit");
+        // axios.post("http://festivales.test/notes/create", note)
+        // .then((payload)=>{
+        //     console.log(payload);
+        //     setNotas([
+        //         ...notas,
+        //         payload.data.data
+        //     ]);
+        //     setNote(initialNote);
+
+        // })
+        // .catch((errors)=>{
+        //     setError(errors.response.data.messages);
+        // })
+        
         //diferentes formas de mostrar las iteraciones de notas 
         console.log(notas.map(note => note.id));
         console.log(...notas.map(note => note.id));
